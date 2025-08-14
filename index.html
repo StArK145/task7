@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FitnessPro - Exercise Database</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="header">
+    <div class="header-content">
+      <h1>💪 FitnessPro</h1>
+      <div class="controls">
+        <div class="search-box">
+          <input 
+            type="text" 
+            id="search-input" 
+            class="search-input" 
+            placeholder="Search exercises..."
+            autocomplete="off"
+          >
+          <span class="search-icon">🔍</span>
+        </div>
+        <select id="body-part-filter" class="filter-select">
+          <option value="">All Body Parts</option>
+        </select>
+        <select id="target-filter" class="filter-select">
+          <option value="">All Targets</option>
+        </select>
+        <button class="reload-btn" onclick="fetchExercises()">
+          <span id="reload-icon">🔄</span> Reload
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <div class="stats-bar" id="stats-bar" style="display: none;">
+      <div class="stat-item">
+        <div class="stat-number" id="total-exercises">0</div>
+        <div class="stat-label">Total Exercises</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" id="filtered-exercises">0</div>
+        <div class="stat-label">Showing</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" id="favorites-count">0</div>
+        <div class="stat-label">Favorites</div>
+      </div>
+    </div>
+
+    <div id="exercise-container"></div>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
